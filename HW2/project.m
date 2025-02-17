@@ -59,19 +59,13 @@ population_spline = ppval(pp, 2005); % Estimate the population using the cubic s
 fprintf('Estimated population in 2005 (polynomial): %.5f\n', population_poly); % Display the results with 5 decimals
 fprintf('Estimated population in 2005 (spline): %.5f\n', population_spline);
 
-
-
 %{
-    Interpretation of Results:
-    The polynomial estimate will likely give you a value that fits the data exactly but may be less reliable outside the range of the data points (extrapolation).
-    The cubic spline, being piecewise and smoother, is typically more reliable for interpolation within the data range, especially when estimating for intermediate years (like 2005).
+Which estimate makes more sense?
 
-    Which estimate makes more sense?
-    For a year like 2005, which is between the years 2010 and 2000 in the dataset, the cubic spline interpolation is typically more reasonable because it provides smooth transitions between the data points, and it avoids the risk of the polynomial overfitting or exhibiting oscillations.
-    The polynomial will exactly fit the data points, but it may produce unrealistic behavior outside the data range (like large oscillations) due to the high-degree nature of the polynomial.
-
-    Summary of approach:
-    Polynomial interpolation (polyfit) gives an exact fit to the data but may not behave well outside the data range.
-    Cubic spline interpolation (spline) provides a smoother and more realistic model, especially when you're making predictions between data points.
-    For 2005, cubic spline is likely the more reasonable estimate.
+For a year like 2005, which is between the years 2010 and 2000 in the dataset, 
+the cubic spline interpolation is typically more reasonable because it provides 
+smooth transitions between the data points, and it avoids the risk of the polynomial 
+overfitting or exhibiting oscillations.The polynomial will exactly fit the data points, 
+but it may produce unrealistic behavior outside the data range (like large oscillations) 
+due to the high-degree nature of the polynomial.
 %}
